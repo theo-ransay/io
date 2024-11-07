@@ -1,0 +1,47 @@
+/*
+* Page : Wipuulce
+* Type : css
+* Apply on 1 page
+*/
+[data-barba-namespace="wipuulce"] section.hero .hero-content {
+    transform: scale(1.2);
+    opacity: 0;
+}
+#wippulce-date > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    #wippulce-date > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 72px 16px;
+        min-height: calc(100vh - 144px);
+    }
+}
+#wippulce-date h3 {
+    color: hsl(0 0% 100% / 0);
+    background-clip: text;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+}
+body.light #wippulce-date h3 {
+    background-image: linear-gradient(90deg, var(--dark-color), var(--dark-color));
+}
+body.dark #wippulce-date h3 {
+    background-image: linear-gradient(90deg, var(--white-color), var(--white-color));
+}
+
+/* animation */
+[data-barba-namespace="wipuulce"] section.hero.visible .hero-content {
+    will-change: transform;
+    animation: bouncedApear 300ms ease-in forwards;
+}
+section#wippulce-date.visible h3 {
+    will-change: transform;
+    animation: apearTitle 300ms ease-in forwards;
+}

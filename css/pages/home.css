@@ -1,0 +1,1188 @@
+/*
+* Page : Home
+* type : css
+* Apply on 1 page
+*/
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* hero section */
+section.hero .cta-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    width: fit-content;
+}
+.cta-container .third-button, .cta-container .secondary-button {
+    width: fit-content;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* hero cards */
+/* card container */
+.card-container {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: calc(1120 * var(--res));
+    max-width: 1424px;
+    margin: 0 auto;
+    pointer-events: none;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* cards */
+.perf-card, .seo-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 152px;
+    height: 120px;
+    border-radius: 8px;
+    opacity: 0;
+}
+/* darkmode theme */
+body.light .perf-card, .seo-card {
+    background: linear-gradient(133.69deg, var(--white-color) -13.85%, var(--secondary-color) 221.38%);
+}
+body.dark .perf-card, body.dark .seo-card {
+    background: var(--bg-body);
+}
+
+/* motion hero card */
+section.hero.visible .perf-card {
+    will-change: transform;
+    animation: apearHeroCards 300ms 700ms ease-in-out both, floatLeftCard 8s linear infinite both;
+}
+section.hero.visible .seo-card {
+    will-change: transform;
+    animation: apearHeroCards 300ms 700ms ease-in-out both, floatRightCard 8s linear infinite both;
+}
+@keyframes apearHeroCards {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+@keyframes floatLeftCard {
+    0% {
+        transform: translate(0,0);
+    } 25% {
+        transform: translate(5px,-15px);
+    } 50% {
+        transform: translate(0,0);
+    } 75% {
+        transform: translate(5px, 15px);
+    } 100% {
+        transform: translate(0,0);
+    }
+}
+@keyframes floatRightCard {
+    0% {
+        transform: translate(0,0);
+    } 25% {
+        transform: translate(-5px, 15px);
+    } 50% {
+        transform: translate(0,0);
+    } 75% {
+        transform: translate(-5px,-15px);
+    } 100% {
+        transform: translate(0,0);
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* perf card container */
+.perf-card .graphique-card {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.perf-card .graphique-card svg.graphique-value {
+    position: absolute;
+    margin: 6px 14px 0px 0px;
+}
+/* darkmode theme */
+body.dark .graphique-value, body.dark .graphique-value path {
+    fill: var(--secondary-darkmode-color);
+}
+body.dark .bg-counter-svg path {
+    fill: var(--bg-2-darkness-element);
+}
+/* perf card content container */
+.perf-card .title-container {
+    position: absolute;
+    bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.perf-card .values-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100px;
+}
+.perf-card .values-container div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+/* perf card title */
+.card-container .title-card {
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 700;
+    text-align: left;
+}
+/* darkmode theme */
+body.light .card-container .title-card {
+    color: var(--dark-color);
+}
+body.dark .card-container .title-card {
+    color: var(--white-color);
+}
+/* perf card text */
+.card-container .text-value {
+    font-size: 10px;
+    line-height: 10px;
+    font-weight: 700;
+    text-align: left;
+}
+body.light .card-container .text-value {
+    color: var(--dark-color);
+}
+body.dark .card-container .text-value {
+    color: var(--lightness-color);
+}
+.card-container .text-card {
+    font-size: 4px;
+    line-height: 4px;
+    text-align: center;
+}
+/* darkmode theme */
+body.light .card-container .text-card {
+    color: var(--dark-grey-color);
+}
+body.dark .card-container .text-card {
+    color: var(--lightness-color);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* seo card svg */
+.seo-card .more-icon {
+    position: absolute;
+    right: 19px;
+    top: -8px;
+}
+body.dark .seo-card .more-icon path {
+    fill: var(--secondary-darkmode-color);
+}
+body.dark .seo-card .hr-icon path, body.dark .seo-card .graph-icon path{
+    stroke: var(--secondary-darkmode-color);
+}
+.seo-card .hr-icon {
+    position: absolute;
+    right: 26px;
+    top: 5px;
+}
+.seo-card .abs-ord-axe {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+}
+.seo-card .title-card {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+}
+.seo-card .text-card {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    width: 73px;
+    text-align: left;
+}
+
+/* scroll indicator */
+section.hero svg.scroll-indicator {
+    opacity: 0;
+}
+section.hero.visible svg.scroll-indicator {
+    will-change: transform;
+    animation: apearHeroScrollIndicator 300ms 700ms ease-in-out both, scrollIndicator 1200ms ease-in-out infinite both;
+}
+@keyframes apearHeroScrollIndicator {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+@keyframes scrollIndicator {
+    0% {
+        transform: translateY(0);
+        fill-opacity: 1;
+    } 50% {
+        transform: translateY(-3px);
+        fill-opacity: 0.5;
+    } 100% {
+        transform: translateY(0);
+        fill-opacity: 1;
+    }
+}
+
+/* animation */
+/* portfolio title content */
+[data-barba-namespace="home"] section.hero h1, section.hero p, section.hero strong {
+    color: hsl(0 0% 100% / 0.2);
+    background-clip: text;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+}
+
+[data-barba-namespace="home"] section.hero.visible .hero-content h1 {
+    will-change: transform;
+    animation: apearTitle 300ms ease-in forwards;
+}
+[data-barba-namespace="home"] section.hero.visible .hero-content p {
+    will-change: transform;
+    animation: apearTitle 300ms ease-in forwards;
+}
+[data-barba-namespace="home"] section.hero.visible .hero-content strong {
+    will-change: transform;
+    animation: apearTitle 300ms ease-in forwards;
+}
+
+/* button service section */
+section.hero .cta-container .secondary-button, section.hero .cta-container .third-button, section.hero .fourth-button {
+    opacity: 0;
+    transform: scale(1.1);
+}
+/* aniamtion */
+section.hero.visible .cta-container .secondary-button {
+    will-change: transform;
+    animation: buttonApear 300ms 250ms ease-in forwards;
+}
+section.hero.visible .cta-container .third-button {
+    will-change: transform;
+    animation: buttonApear 300ms 350ms ease-in forwards;
+}
+section.hero.visible .fourth-button {
+    will-change: transform;
+    animation: buttonApear 300ms 450ms ease-in forwards;
+}
+
+/* darkmode theme */
+body.light [data-barba-namespace="home"] section.hero h1, body.light section.hero strong {
+    background-image: linear-gradient(90deg, var(--white-color), var(--white-color));
+}
+body.dark [data-barba-namespace="home"] section.hero h1, body.dark section.hero strong {
+    background-image: linear-gradient(90deg, var(--white-color), var(--white-color));
+}
+body.light [data-barba-namespace="home"] section.hero p  {
+    background-image: linear-gradient(90deg, var(--lightness-color), var(--lightness-color));
+}
+body.dark [data-barba-namespace="home"] section.hero p  {
+    background-image: linear-gradient(90deg, var(--lightness-color), var(--lightness-color));
+}
+
+/* responsiv */
+/* breakpoints */
+@media (max-width: 1370px) {
+    .card-container {
+        display: none;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* web site features section */
+.web-site-features {
+    justify-content: center;
+    align-items: center;
+    gap: 56px;
+    padding-bottom: 192px;
+    height: calc(100vh - 344px);
+}
+.web-site-features .title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    max-width: 740px;
+    width: 100%;
+}
+.web-site-features .title-container > h2 {
+    color: hsl(0 0% 100% / 0.2);
+}
+.visible .web-site-features .title-container > h2 {
+    background-clip: text;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    will-change: transform;
+    animation: apearTitle 300ms ease-in forwards;
+}
+body.light .visible .web-site-features .title-container > h2 {
+    background-image: linear-gradient(90deg, var(--dark-color), var(--dark-color));
+}
+body.dark .visible .web-site-features .title-container > h2 {
+    background-image: linear-gradient(90deg, var(--white-color), var(--white-color));
+}
+.web-site-features-container {
+    display: grid;
+    grid-template-columns: repeat(4, 235px);
+    grid-auto-rows: auto;
+    justify-content: space-between;
+    gap: 56px 0px;
+    width: 100%;
+}
+body.light .web-site-features-container {
+    grid-template-columns: repeat(4, 235px);
+    gap: 56px 0px;
+}
+body.dark .web-site-features-container {
+    grid-template-columns: repeat(4, auto);
+    gap: 16px;
+}
+.web-site-features-container .card {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 24px;
+    opacity: 0;
+    transform: scale(1.2);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* card animation */
+.visible .card.one {
+    will-change: transform;
+    animation: bouncedApear 300ms 300ms ease-in forwards;
+}
+.visible .card.eight {
+    will-change: transform;
+    animation: bouncedApear 300ms 350ms ease-in forwards;
+}
+.visible .card.three {
+    will-change: transform;
+    animation: bouncedApear 300ms 400ms ease-in forwards;
+}
+.visible .card.six {
+    will-change: transform;
+    animation: bouncedApear 300ms 450ms ease-in forwards;
+}
+.visible .card.four {
+    will-change: transform;
+    animation: bouncedApear 300ms 500ms ease-in forwards;
+}
+.visible .card.five {
+    will-change: transform;
+    animation: bouncedApear 300ms 550ms ease-in forwards;
+}
+.visible .card.two {
+    will-change: transform;
+    animation: bouncedApear 300ms 600ms ease-in forwards;
+}
+.visible .card.seven {
+    will-change: transform;
+    animation: bouncedApear 300ms 650ms ease-in forwards;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* darkmode theme */
+body.dark .web-site-features-container .card {
+    max-width: initial;
+    padding: 24px;
+    border-radius: 16px;
+    background: var(--bg-darkness-element);
+    width: initial;
+}
+body.light .web-site-features-container .card {
+    max-width: 268px;
+}
+body.dark .web-site-features-container .card {
+    max-width: initial;
+    padding: 24px;
+    border-radius: 16px;
+    background: var(--bg-darkness-element);
+    width: initial;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* breakpoint */
+@media (max-width: 1270px) {
+    body.light .web-site-features-container, body.dark .web-site-features-container {
+        grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+        gap: 32px 16px;
+    }
+    .web-site-features-container .card {
+        max-width: 100%;
+    }
+
+    body.light .web-site-features-container .card {
+        max-width: 100%;
+        padding: 24px;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* svg */
+.web-site-features-container .card svg {
+    width: 40px;
+    height: auto;
+    overflow: visible;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* darkmode theme svg */
+body.light .web-site-features-container .card svg path {
+    fill: var(--dark-color);
+}
+body.dark .web-site-features-container .card svg path {
+    fill: var(--primary-darkmode-color);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+.web-site-features-container .card > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+}
+.web-site-features-container .card strong {
+    text-transform: capitalize;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* services description section */
+section.about-services-section.darkness-section > div {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 56px;
+    padding: 152px 0px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* title and text */
+section.about-services-section.darkness-section h2 {
+    color: var(--white-color);
+}
+section.about-services-section.darkness-section strong {
+    color: var(--white-color);
+}
+section.about-services-section.darkness-section p {
+    color: var(--lightness-color);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* card container */
+section.about-services-section.darkness-section .about-services-container {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 56px;
+    padding: 0px 152px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* img services section */
+.about-services-container .img-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.about-services-container .img-container img {
+    height: auto;
+}
+.about-services-container .img-container.reverse {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.about-services-container .img-container.reverse img {
+    height: auto;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* content services section */
+section.about-services-section.darkness-section .content-about-services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    height: 100%;
+}
+
+/* title */
+section.about-services-section.darkness-section .content-about-services > h2 {
+    color: hsl(0 0% 100% / 0);
+    background-clip: text;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+}
+body.light section.about-services-section.darkness-section .content-about-services > h2 {
+    background-image: linear-gradient(90deg, var(--white-color), var(--white-color));
+}
+body.dark section.about-services-section.darkness-section .content-about-services > h2 {
+    background-image: linear-gradient(90deg, var(--white-color), var(--white-color));
+}
+/* section 1 about services */
+section.about-services-section.darkness-section.visible .content-about-services.one > h2 {
+    will-change: transform;
+    animation: apearTitle 300ms ease-in forwards;
+}
+/* section 2 about services */
+section.about-services-section.darkness-section.visible .content-about-services.two > h2 {
+    will-change: transform;
+    animation: apearTitle 300ms 1150ms ease-in forwards;
+}
+
+/* about services text */
+section.about-services-section.darkness-section .content-about-services .content-description > * {
+    transform: translateY(8px);
+    opacity: 0;
+}
+
+.content-about-services .description-container .rounded-icon-container {
+    opacity: 0;
+}
+
+/* section 1 aboute services */
+/* animation text card 1 */
+section.about-services-section.darkness-section.visible .content-about-services.one .description-container.one .content-description {
+    transform-origin: left;
+    will-change: transform;
+    animation: textRotate 300ms 250ms ease-in forwards;
+}
+section.about-services-section.darkness-section.visible .content-about-services.one .description-container.one .content-description > * {
+    will-change: transform;
+    animation: apear 300ms 250ms ease-in forwards, textSlideUp 300ms 250ms ease-in forwards;
+}
+section.about-services-section.darkness-section.visible .content-about-services.one .description-container.one .rounded-icon-container {
+    will-change: transform;
+    animation: apear 300ms 350ms ease-in forwards;
+}
+/* animation text card 2 */
+section.about-services-section.darkness-section.visible .content-about-services.one .description-container.two .content-description {
+    will-change: transform;
+    transform-origin: left;
+    animation: textRotate 300ms 500ms ease-in forwards;
+}
+section.about-services-section.darkness-section.visible .content-about-services.one .description-container.two .content-description > * {
+    will-change: transform;
+    animation: apear 300ms 500ms ease-in forwards, textSlideUp 300ms 500ms ease-in forwards;
+}
+section.about-services-section.darkness-section.visible .content-about-services.one .description-container.two .rounded-icon-container {
+    will-change: transform;
+    animation: apear 300ms 600ms ease-in forwards;
+}
+/* animation text card 3 */
+section.about-services-section.darkness-section.visible .content-about-services.one .description-container.three .content-description {
+    will-change: transform;
+    transform-origin: left;
+    animation: textRotate 300ms 750ms ease-in forwards;
+}
+section.about-services-section.darkness-section.visible .content-about-services.one .description-container.three .content-description > * {
+    will-change: transform;
+    animation: apear 300ms 750ms ease-in forwards, textSlideUp 300ms 750ms ease-in forwards;
+}
+section.about-services-section.darkness-section.visible .content-about-services.one .description-container.three .rounded-icon-container {
+    will-change: transform;
+    animation: apear 300ms 850ms ease-in forwards;
+}
+
+/* section 2 aboute services */
+/* animation text card 1 */
+section.about-services-section.darkness-section.visible .content-about-services.two .description-container.one .content-description {
+    transform-origin: left;
+    will-change: transform;
+    animation: textRotate 300ms 1450ms ease-in forwards;
+}
+section.about-services-section.darkness-section.visible .content-about-services.two .description-container.one .content-description > * {
+    will-change: transform;
+    animation: apear 300ms 1450ms ease-in forwards, textSlideUp 300ms 1450ms ease-in forwards;
+}
+section.about-services-section.darkness-section.visible .content-about-services.two .description-container.one .rounded-icon-container {
+    will-change: transform;
+    animation: apear 300ms 1550ms ease-in forwards;
+}
+/* animation text card 2 */
+section.about-services-section.darkness-section.visible .content-about-services.two .description-container.two .content-description {
+    transform-origin: left;
+    will-change: transform;
+    animation: textRotate 300ms 1700ms ease-in forwards;
+}
+section.about-services-section.darkness-section.visible .content-about-services.two .description-container.two .content-description > * {
+    will-change: transform;
+    animation: apear 300ms 1700ms ease-in forwards, textSlideUp 300ms 1700ms ease-in forwards;
+}
+section.about-services-section.darkness-section.visible .content-about-services.two .description-container.two .rounded-icon-container {
+    will-change: transform;
+    animation: apear 300ms 1800ms ease-in forwards;
+}
+
+section.about-services-section.darkness-section .description-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 24px;
+}
+section.about-services-section.darkness-section .content-description {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+section.about-services-section.darkness-section .lightness-card {
+    width: 100%;
+    height: 345px;
+    border-radius: 16px;
+    background: linear-gradient(119deg, var(--white-color) -14.19%, var(--secondary-color) 222.44%);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* button service section */
+section.about-services-section.darkness-section > div div.primary-button {
+    padding: 0px 152px;
+    opacity: 0;
+    transform: scale(1.1);
+}
+/* aniamtion */
+section.about-services-section.darkness-section.visible > div div.primary-button {
+    will-change: transform;
+    animation: buttonApear 300ms 2100ms ease-in forwards;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* vignette */
+body.dark .rounded-icon-container {
+    background: var(--bg-body);
+}
+body.dark .rounded-icon-container svg, body.dark .rounded-icon-container svg path {
+    fill: var(--primary-darkmode-color) !important;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* responsiv */
+/* mobile */
+@media (max-width: 768px) {
+    section.about-services-section.darkness-section > div {
+        padding: 72px 16px;
+    }
+    section.about-services-section.darkness-section .about-services-container {
+        grid-auto-flow: row;
+        padding: 0px 32px;
+    }
+    .about-services-container .img-container img {
+        width: 100%;
+    }
+    .about-services-container .img-container.reverse {
+        order: -1;
+    }
+    section.about-services-section.darkness-section > div div.primary-button {
+        padding: 0px 32px;
+    }
+}
+/* tablette */
+@media (min-width: 769px) and (max-width: 1024px){
+    section.about-services-section.darkness-section > div {
+        padding: 72px 56px!important;
+    }
+    section.about-services-section.darkness-section .about-services-container {
+        grid-auto-flow: row;
+        padding: 32px;
+    }
+    .about-services-container .img-container img {
+        width: 100%;
+    }
+    .about-services-container .img-container.reverse {
+        order: -1;
+    }
+}
+@media (min-width: 1025px) and (max-width: 1310px){
+    section.about-services-section.darkness-section .about-services-container {
+        grid-auto-flow: row;
+    }
+    .about-services-container .img-container img {
+        width: 100%;
+    }
+    .about-services-container .img-container.reverse {
+        order: -1;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* about me section */
+section.about-me-section.darkness-section > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+.content-about-me .title-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* about me title content */
+section.about-me-section.darkness-section .title-container h2, section.about-me-section.darkness-section .title-container p {
+    color: hsl(0 0% 100% / 0);
+    background-clip: text;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+}
+section.about-me-section.darkness-section strong {
+    color: var(--white-color);
+}
+section.about-me-section.darkness-section p {
+    color: var(--lightness-color);
+}
+
+/* animation */
+section.about-me-section.darkness-section.visible h2 {
+    will-change: transform;
+    animation: apearTitle 300ms ease-in forwards;
+}
+section.about-me-section.darkness-section.visible .title-container p {
+    will-change: transform;
+    animation: apearTitle 300ms ease-in forwards;
+}
+
+/* darkmode theme */
+body.light section.about-me-section.darkness-section .title-container h2  {
+    background-image: linear-gradient(90deg, var(--white-color), var(--white-color));
+}
+body.dark section.about-me-section.darkness-section .title-container h2  {
+    background-image: linear-gradient(90deg, var(--white-color), var(--white-color));
+}
+body.light section.about-me-section.darkness-section .title-container p  {
+    background-image: linear-gradient(90deg, var(--lightness-color), var(--lightness-color));
+}
+body.dark section.about-me-section.darkness-section .title-container p  {
+    background-image: linear-gradient(90deg, var(--lightness-color), var(--lightness-color));
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* aboute descriptions containers */
+section.about-me-section.darkness-section .about-me-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    padding: 0px 152px !important;
+}
+section.about-me-section.darkness-section .content-about-me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    height: 100%;
+}
+section.about-me-section.darkness-section .description-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 24px;
+}
+.about-me-container .content-aboute-me-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+section.about-me-section.darkness-section .content-description {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* animation */
+/* about services text */
+section.about-services-section.darkness-section .content-about-me .description-container .content-aboute-me-container > * {
+    transform: translateY(8px);
+    opacity: 0;
+}
+section.about-me-section.darkness-section .rounded-icon-container, section.about-me-section.darkness-section .content-aboute-me-container > * {
+    opacity: 0;
+}
+/* animation text card 1 */
+section.about-me-section.darkness-section.visible .content-about-me .description-container.one .content-aboute-me-container {
+    transform-origin: left;
+    will-change: transform;
+    animation: textRotate 300ms 250ms ease-in forwards;
+}
+section.about-me-section.darkness-section.visible .content-about-me .description-container.one .content-aboute-me-container > * {
+    will-change: transform;
+    animation: apear 300ms 250ms ease-in forwards, textSlideUp 300ms 250ms ease-in forwards;
+}
+section.about-me-section.darkness-section.visible .content-about-me .description-container.one .rounded-icon-container {
+    will-change: transform;
+    animation: apear 300ms 400ms ease-in forwards;
+}
+/* animation text card 2 */
+section.about-me-section.darkness-section.visible .content-about-me .description-container.two .content-aboute-me-container {
+    transform-origin: left;
+    will-change: transform;
+    animation: textRotate 300ms 550ms ease-in forwards;
+}
+section.about-me-section.darkness-section.visible .content-about-me .description-container.two .content-aboute-me-container > * {
+    will-change: transform;
+    animation: apear 300ms 550ms ease-in forwards, textSlideUp 300ms 550ms ease-in forwards;
+}
+section.about-me-section.darkness-section.visible .content-about-me .description-container.two .rounded-icon-container {
+    will-change: transform;
+    animation: apear 300ms 700ms ease-in forwards;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* face img */
+section.about-me-section.darkness-section .lightness-card {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    height: 345px;
+    border-radius: 16px;
+}
+
+.about-me-container div img {
+    position: absolute;
+    bottom: 0;
+    max-height: calc(100% + 56px);
+    width: calc(100% - 10vw);
+}
+
+/* breakpoint */
+@media (min-width: 1300px) and (max-width: 1450px) {
+    .about-me-container div img {
+        width: calc(100% - 5vw);
+    }
+}
+@media (min-width: 1200px) and (max-width: 1299px) {
+    .about-me-container div img {
+        width: calc(100% - 2vw);
+    }
+}
+@media (min-width: 769px) and (max-width: 1199px) {
+    .about-me-container div img {
+        width: calc(100% - 1vw);
+    }
+}
+@media (min-width: 550px) and (max-width: 768px) {
+    .about-me-container div img {
+        max-height: initial;
+        width: auto;
+    }
+}
+@media (max-width: 549px) {
+    .about-me-container div img {
+        max-height: initial;
+        width: calc(100% - 56px);
+    }
+}
+
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* darkmode theme face img */
+body.light section.about-me-section.darkness-section .lightness-card {
+    background: linear-gradient(119deg, var(--white-color) -14.19%, var(--secondary-color) 222.44%);
+}
+body.dark section.about-me-section.darkness-section .lightness-card {
+    border: 1px solid rgba(8, 0, 26, 0.24);
+    background: var(--bg-3-darkness-element);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* button */
+.about-me-section.darkness-section > div div.primary-button {
+    padding: 0px 152px;
+    opacity: 0;
+    transform: scale(1.1);
+}
+
+/* animation */
+.about-me-section.darkness-section.visible > div div.primary-button {
+    will-change: transform;
+    animation: buttonApear 300ms 950ms ease-in forwards;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* responsiv */
+/* mobile */
+@media (max-width: 768px) {
+    section.about-me-section.darkness-section > div {
+        min-height: calc(100vh - 160px) !important;
+    }
+    section.about-me-section.darkness-section .about-me-container {
+        flex-direction: column;
+        padding: 0px 32px !important;
+    }
+    .about-me-section.darkness-section > div div.primary-button {
+        padding: 0px 32px;
+    }
+}
+
+/* tablette */
+@media (min-width: 768px) and (max-width: 1024px) {
+    section.about-me-section.darkness-section .about-me-container {
+        padding: 0px !important;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* wipuulce plugin */
+section.wipuulce-section > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+section div .wipuulce {
+    display: grid;
+    grid-template-columns: 1fr 1fr; align-self: center;
+    gap: 56px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* wipuulce title content */
+section.wipuulce-section.darkness-section h2 {
+    color: var(--white-color);
+}
+section.wipuulce-section.darkness-section strong {
+    color: var(--white-color);
+}
+section.wipuulce-section.darkness-section p {
+    color: var(--lightness-color);
+}
+
+/* portfolio title content */
+section.wipuulce-section.darkness-section h2 {
+    color: hsl(0 0% 100% / 0.2);
+    background-clip: text;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+}
+
+/* animation */
+section.wipuulce-section.darkness-section.visible h2 {
+    will-change: transform;
+    animation: apearTitle 300ms ease-in forwards;
+}
+
+/* darkmode theme */
+body.light section.wipuulce-section.darkness-section h2  {
+    background-image: linear-gradient(90deg, var(--white-color), var(--white-color));
+}
+body.dark section.wipuulce-section.darkness-section h2  {
+    background-image: linear-gradient(90deg, var(--white-color), var(--white-color));
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* wipuulce logo card */
+section .wipuulce .lightness-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+    .wipuulce-logo {
+        width: auto;
+        height: 50%;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* darkmode theme */
+body.light section .wipuulce .lightness-card {
+    background: linear-gradient(119deg, var(--white-color) -14.19%, var(--secondary-color) 222.44%);
+}
+body.dark section .wipuulce .lightness-card {
+    background: var(--bg-3-darkness-element);
+    border: 1px solid rgba(8, 0, 26, 0.24);
+}
+body.light .wipuulce-logo path {
+    fill: var(--dark-color);
+}
+body.dark .wipuulce-logo path {
+    fill: var(--bg-darkness-element);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* wipuulce content description */
+section .wipuulce .content-about-services {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 32px;
+    height: 100%;
+}
+section .wipuulce .description-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 24px;
+}
+.wipuulce .content-description {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* aniamtion */
+/* about wipuulce text */
+section.wipuulce-section.darkness-section .content-about-services .description-container .content-description > * {
+    transform: translateY(8px);
+    opacity: 0;
+}
+section.wipuulce-section.darkness-section .rounded-icon-container, section.wipuulce-section.darkness-section .content-description > * {
+    opacity: 0;
+}
+/* animation text card 1 */
+section.wipuulce-section.darkness-section.visible .content-about-services .description-container.one .content-description {
+    transform-origin: left;
+    will-change: transform;
+    animation: textRotate 300ms 250ms ease-in forwards;
+}
+section.wipuulce-section.darkness-section.visible .content-about-services .description-container.one .content-description > * {
+    will-change: transform;
+    animation: apear 300ms 250ms ease-in forwards, textSlideUp 300ms 250ms ease-in forwards;
+}
+section.wipuulce-section.darkness-section.visible .content-about-services .description-container.one .rounded-icon-container {
+    will-change: transform;
+    animation: apear 300ms 400ms ease-in forwards;
+}
+/* animation text card 2 */
+section.wipuulce-section.darkness-section.visible .content-about-services .description-container.two .content-description {
+    transform-origin: left;
+    will-change: transform;
+    animation: textRotate 300ms 550ms ease-in forwards;
+}
+section.wipuulce-section.darkness-section.visible .content-about-services .description-container.two .content-description > * {
+    will-change: transform;
+    animation: apear 300ms 550ms ease-in forwards, textSlideUp 300ms 550ms ease-in forwards;
+}
+section.wipuulce-section.darkness-section.visible .content-about-services .description-container.two .rounded-icon-container {
+    will-change: transform;
+    animation: apear 300ms 700ms ease-in forwards;
+}
+/* animation text card 3 */
+section.wipuulce-section.darkness-section.visible .content-about-services .description-container.three .content-description {
+    transform-origin: left;
+    will-change: transform;
+    animation: textRotate 300ms 700ms ease-in forwards;
+}
+section.wipuulce-section.darkness-section.visible .content-about-services .description-container.three .content-description > * {
+    will-change: transform;
+    animation: apear 300ms 700ms ease-in forwards, textSlideUp 300ms 700ms ease-in forwards;
+}
+section.wipuulce-section.darkness-section.visible .content-about-services .description-container.three .rounded-icon-container {
+    will-change: transform;
+    animation: apear 300ms 800ms ease-in forwards;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* button */
+.wipuulce-section.darkness-section > div div.primary-button {
+    opacity: 0;
+    transform: scale(1.1);
+}
+
+/* animation */
+.wipuulce-section.darkness-section.visible > div div.primary-button {
+    will-change: transform;
+    animation: buttonApear 300ms 950ms ease-in forwards;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* responsiv */
+@media (max-width: 768px) {
+    section div .wipuulce {
+        grid-template-columns: 1fr;
+        padding: 0px 32px !important;
+    }
+    section .wipuulce .content-about-services {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        height: 100%;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------------------------------------------------------------- */

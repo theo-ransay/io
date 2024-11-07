@@ -1,0 +1,275 @@
+/*
+* Page : all
+* type : css
+* Apply on fiew elements
+*/
+
+/* ---------------------------------------------------------------------------------------------------------------------- */
+
+/*  START PORTFOLIO STYLE */
+
+/* ---------------------------------------------------------------------------------------------------------------------- */
+
+/* portfolio section */
+section .portfolio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+.portfolio .title-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+section .portfolio .filer-portfolio-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* portfolio title content */
+section.portfolio-container .title-container h2, section.portfolio-container .title-container p {
+    color: hsl(0 0% 100% / 0.2);
+    background-clip: text;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+}
+
+/* animation */
+section.portfolio-container.visible .title-container h2 {
+    will-change: transform;
+    animation: apearTitle 300ms 500ms ease-in forwards;
+}
+section.portfolio-container.visible .title-container p {
+    will-change: transform;
+    animation: apearTitle 300ms 500ms ease-in forwards;
+}
+
+/* darkmode theme */
+body.light section.portfolio-container .title-container  h2  {
+    background-image: linear-gradient(90deg, var(--dark-color), var(--dark-color));
+}
+body.dark section.portfolio-container .title-container  h2  {
+    background-image: linear-gradient(90deg, var(--white-color), var(--white-color));
+}
+body.light section.portfolio-container .title-container  p  {
+    background-image: linear-gradient(90deg, var(--darkness-color), var(--darkness-color));
+}
+body.dark section.portfolio-container .title-container  p  {
+    background-image: linear-gradient(90deg, var(--lightness-color), var(--lightness-color));
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* display bento grid */
+.content-project {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 24%;
+    gap: 16px;
+}
+.card-project-img {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    transform: scale(1.2);
+    opacity: 0;
+}
+.card-project-description.first {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    transform: scale(1.2);
+    opacity: 0;
+}
+.card-project-description.second {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    transform: scale(1.2);
+    opacity: 0;
+}
+.card-project-description.third {
+    grid-column: 3 / -1;
+    grid-row: 1 / 3;
+    transform: scale(1.2);
+    opacity: 0;
+}
+
+/* animation */
+.visible li.is-visible .card-project-img {
+    will-change: transform;
+    animation: bouncedApear 300ms ease-in forwards;
+}
+.visible li.is-visible .card-project-description.third {
+    will-change: transform;
+    animation: bouncedApear 300ms 200ms ease-in forwards;
+}
+.visible li.is-visible .card-project-description.first {
+    will-change: transform;
+    animation: bouncedApear 300ms 300ms ease-in forwards;
+}
+.visible li.is-visible .card-project-description.second {
+    will-change: transform;
+    animation: bouncedApear 300ms 400ms ease-in forwards;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* card img protfolio */
+.card-project-img {
+    position: relative;
+    border-radius: 16px;
+    border: 1px solid rgba(8, 0, 26, 0.24);
+    overflow: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.card-project-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+}
+/* card img scroll iondicator */
+.card-project-img::before {
+    content: '';
+    position: sticky;
+    top: calc(100% - 32px);
+    left: 8px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom, left;
+    z-index: 10;
+    will-change: transform;
+    animation: scrollIndicatorPortfolio 1200ms ease-in-out infinite both;
+}
+body.light .card-project-img::before {
+    background-image: url('../../assets/images/light-scroll-indicator.svg');
+}
+body.dark .card-project-img::before {
+    background-image: url('../../assets/images/dark-scroll-indicator.svg');
+}
+@keyframes scrollIndicatorPortfolio {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    } 50% {
+        transform: translateY(-3px);
+        opacity: 0.5;
+    } 100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* content card description */
+.card-project-description {
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(8, 0, 26, 0.24);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* darkmode theme */
+body.light .card-project-description {
+    background: linear-gradient(119deg, rgba(82, 0, 255, 0.32) -103.45%, rgba(246, 236, 246, 0.32) 24.96%, rgba(246, 236, 246, 0.32) 78.27%, rgba(82, 0, 255, 0.32) 190.79%), var(--white-color);
+    backdrop-filter: blur(36px);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* number step project */
+.card-project-number-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* darkmode theme */
+body.light .card-project-number-indicator {
+    border: 1px solid var(--darkness-color);
+}
+body.dark .card-project-number-indicator {
+    border: 1px solid var(--lightness-color);
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* content description card */
+.card-project-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+.card-project-number-indicator strong {
+    color: var(--white-color);
+}
+.card-project-head strong {
+    text-transform: capitalize;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* arrows */
+section.portfolio-container .splide__arrows {
+    opacity: 0;
+}
+section.portfolio-container.visible .splide__arrows {
+    will-change: transform;
+    animation: apear 300ms 500ms ease-in forwards;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------- */
+
+/* responsiv */
+@media (max-width: 768px) {
+    .content-project {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        height: fit-content;
+    }
+    .card-project-img {
+        grid-column: auto;
+        grid-row: auto;
+        height: 30vh;
+    }
+    .card-project-description.first {
+        grid-column: auto;
+        grid-row: auto;
+    }
+    .card-project-description.second {
+        grid-column: auto;
+        grid-row: auto;
+    }
+    .card-project-description.third {
+        grid-column: auto;
+        grid-row: auto;
+    }
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------- */
+
+/*  END PORTFOLIO STYLE */
+
+/* ---------------------------------------------------------------------------------------------------------------------- */

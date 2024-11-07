@@ -1,0 +1,33 @@
+/*
+* Page : Privacy polices
+* type : css
+* Apply on 1 page
+*/
+#privacy-policies > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    height: fit-content;
+    padding: 152px;
+}
+/* responsiv */
+@media (min-width: 769px) and (max-width: 1024px) {
+    #privacy-policies > div {
+        padding: 56px;
+    }
+}
+@media (max-width: 768px) {
+    #privacy-policies > div {
+        padding: 56px 16px;
+    }
+}
+
+/* links */
+body.light #privacy-policies a {
+    color: var(--primary-color);
+}
+body.dark #privacy-policies a {
+    color: var(--primary-darkmode-color);
+}
