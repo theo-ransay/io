@@ -253,7 +253,7 @@ section.hero.visible svg.scroll-indicator {
 
 /* animation */
 /* portfolio title content */
-[data-barba-namespace="home"] section.hero h1, section.hero p, section.hero strong {
+[data-barba-namespace="home"] section.hero h1, [data-barba-namespace="home"] section.hero p, [data-barba-namespace="home"] section.hero strong {
     color: hsl(0 0% 100% / 0.2);
     background-clip: text;
     background-repeat: no-repeat;
@@ -932,6 +932,17 @@ section.about-me-section.darkness-section .lightness-card {
     .about-me-container div img {
         max-height: initial;
         width: calc(100% - 56px);
+    }
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    section.about-me-section.darkness-section .lightness-card {
+        position: relative;
+        padding-top: 16px;
+    }
+    .about-me-container div img {
+        position: initial;
     }
 }
 

@@ -1,6 +1,6 @@
 # BEGIN ERROR DOCUMENT
-ErrorDocument 404 http://localhost/project/ransay_git/404.html
-ErrorDocument 403 http://localhost/project/ransay_git/404.html
+ErrorDocument 404 https://theo-ransay.github.io/io/404.html
+ErrorDocument 403 https://theo-ransay.github.io/io/404.html
 # END ERROR DOCUMENT
 
 ServerSignature Off
@@ -25,7 +25,7 @@ RewriteRule ^contact$ contact.html
 # BEGIN PREVENT HOTLINKING
 RewriteEngine On
 #Replace ?localhost/project/ransay_git/ with your website url
-RewriteCond %{HTTP_REFERER} !^http://(.+.)?localhost/project/ransay_git/ [NC]
+RewriteCond %{HTTP_REFERER} !^http://(.+.)?theo-ransay.github.io/io/ [NC]
 RewriteCond %{HTTP_REFERER} !^$
 #Replace /images/nohotlink.jpg with your "hotlinking is not permitted" image url
 RewriteRule .*.(jpe?g|gif|bmp|png)$ /hotlinksnotpermitted.jpg [L]

@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://www.exemple.com/</loc>
+    <loc>https://theo-ransay.github.io/io/</loc>
     <lastmod>2024-10-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://www.exemple.com/accueil</loc>
+    <loc>https://theo-ransay.github.io/io/accueil</loc>
     <lastmod>2024-10-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://www.exemple.com/wippulce</loc>
+    <loc>https://theo-ransay.github.io/io/wippulce</loc>
     <lastmod>2024-10-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.exemple.com/contact</loc>
+    <loc>https://theo-ransay.github.io/io/contact</loc>
     <lastmod>2024-10-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.exemple.com/mentions-legales</loc>
+    <loc>https://theo-ransay.github.io/io/mentions-legales</loc>
     <lastmod>2024-10-24</lastmod>
     <changefreq>never</changefreq>
     <priority>0.1</priority>
   </url>
 
   <url>
-    <loc>https://www.exemple.com/404</loc>
+    <loc>https://theo-ransay.github.io/io/404</loc>
     <lastmod>2024-10-24</lastmod>
     <changefreq>never</changefreq>
     <priority>0.1</priority>

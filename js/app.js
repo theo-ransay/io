@@ -48,7 +48,6 @@ function forcePushHashUrl() {
                 barba.go(destination).then(() => {
 
                     const targetElement = document.getElementById(sectionDestination);
-                    console.log(targetElement);
 
                     if (targetElement) {
                         setTimeout(() => {
@@ -333,7 +332,7 @@ function addIndicator() {
 
             link.classList.add('active');
 
-        } else if (window.location.pathname === "/project/ransay_git/") {
+        } else if (window.location.pathname === "/io/") {
 
             homeMenuItem.classList.add('active');
             homeMobileMenuItem.classList.add('active');
@@ -359,7 +358,7 @@ document.addEventListener('DOMContentLoaded', addIndicator);
 
 function initNavMobileCallback() {
 
-    const openNavMobileCallbackButton = document.getElementById('header-mobile-callback-button');
+    const openNavMobileCallbackButton = document.querySelector('#header-mobile-callback-button a');
     const navMobileMenu = document.getElementById('header-nav-mobile-menu');
     const navMobileItems = document.querySelectorAll('#header-nav-mobile-menu ul li a');
 
@@ -482,9 +481,18 @@ function observeElements(selector, scrollContainer, options = { root: null, root
     });
 }
 window.addEventListener('load', function () {
+    // Determine if the device is mobile
+    const isMobile = window.matchMedia("only screen and (max-width: 768px)").matches;
 
-    observeElements('#main-section > section.animate-element, #main-section > footer.animate-element', '#main-section');
+    // Set threshold based on device type
+    const threshold = isMobile ? 0.2 : 0.5; // Modify the threshold value for mobile
 
+    // Pass the modified options to the observeElements function
+    observeElements('#main-section > section.animate-element, #main-section > footer.animate-element', '#main-section', {
+        root: null,
+        rootMargin: '0px',
+        threshold: threshold
+    });
 });
 
 /* ---------------------------------------------------------------------------------------------------------------------- */
@@ -674,8 +682,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const formCustomCookies = document.getElementById('custom-cookies-consent');
     let consent = "";
 
-    function cookiesFonctional() {
-        console.log('fonctionnal');
+    function cookiesFonctionnal() {
+        // Do nothing
+    }
+
+    function cookiesNecessary() {
+        // Do nothing
     }
 
     function cookiesAnalytics() {
@@ -687,25 +699,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
         gtag('config', 'G-PJTFG33G88');
 
-        
     }
 
     function executeScripts(consent) {
 
         if (consent === "all") {
 
-            cookiesFonctional();
-            cookiesAnalitycs();
+            cookiesFonctionnal();
+            cookiesAnalytics();
 
         } else if (consent === "not-all") {
 
-            console.log('not-all')
+            cookiesNecessary();
 
         }
 
         if (consent === "fonctionnal") {
 
-            cookiesFonctional();
+            cookiesFonctionnal();
 
         }
 
