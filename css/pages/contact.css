@@ -354,8 +354,9 @@ section.hero.contact .liste-social-icon .link-social-icon .social-icon {
 }
 @media (max-width: 768px) {
     #hero-section.hero.contact {
+        height: fit-content;
+        padding-top: 88px;
         overflow: hidden;
-        padding-top: 32px;
     }
     #hero-section.hero.contact .hero-content > div {
         width: calc(100% - 32px);

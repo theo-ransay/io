@@ -23,12 +23,10 @@ RewriteRule ^contact$ contact.html
 # END REWRITE URL
 
 # BEGIN PREVENT HOTLINKING
-RewriteEngine On
-#Replace ?localhost/project/ransay_git/ with your website url
 RewriteCond %{HTTP_REFERER} !^https://(.+.)?theo-ransay.github.io/io/ [NC]
 RewriteCond %{HTTP_REFERER} !^$
-#Replace /images/nohotlink.jpg with your "hotlinking is not permitted" image url
-RewriteRule .*.(jpe?g|gif|bmp|png)$ /hotlinksnotpermitted.jpg [L]
+
+RewriteRule .*.(jpe?g|gif|bmp|png)$ /assets/images/favicon-48x48.png [L]
 # END PREVENT HOTLINKING
 
 # BEGIN CONFIGURE YOUR WEBSITE FOR HTML5 VIDEOS
