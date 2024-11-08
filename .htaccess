@@ -1,5 +1,5 @@
 # BEGIN ERROR DOCUMENT
-#ErrorDocument 404 https://theo-ransay.github.io/io/404.html
+ErrorDocument 404 https://theo-ransay.github.io/io/404.html
 ErrorDocument 403 https://theo-ransay.github.io/io/404.html
 # END ERROR DOCUMENT
 
@@ -13,13 +13,13 @@ Options All -Indexes
 # BEGIN REWRITE URL
 RewriteEngine On
 
-RewriteRule ^accueil$ index.html
-RewriteRule ^.{0}$ index.html
-RewriteRule ^404$ 404.html
-RewriteRule ^mentions-legales$ mentions-legales.html
+RewriteRule ^accueil$ index.html [L]
+RewriteRule ^.{0}$ index.html [L]
+RewriteRule ^404$ 404.html [L]
+RewriteRule ^mentions-legales$ mentions-legales.html [L]
 
-RewriteRule ^wipuulce$ wipuulce.html
-RewriteRule ^contact$ contact.html
+RewriteRule ^wipuulce$ wipuulce.html [L]
+RewriteRule ^contact$ contact.html [L]
 # END REWRITE URL
 
 # BEGIN PREVENT HOTLINKING
