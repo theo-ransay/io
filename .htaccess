@@ -25,7 +25,7 @@ RewriteRule ^contact$ contact.html
 # BEGIN PREVENT HOTLINKING
 RewriteEngine On
 #Replace ?localhost/project/ransay_git/ with your website url
-RewriteCond %{HTTP_REFERER} !^http://(.+.)?theo-ransay.github.io/io/ [NC]
+RewriteCond %{HTTP_REFERER} !^https://(.+.)?theo-ransay.github.io/io/ [NC]
 RewriteCond %{HTTP_REFERER} !^$
 #Replace /images/nohotlink.jpg with your "hotlinking is not permitted" image url
 RewriteRule .*.(jpe?g|gif|bmp|png)$ /hotlinksnotpermitted.jpg [L]
