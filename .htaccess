@@ -1,5 +1,5 @@
 # BEGIN ERROR DOCUMENT
-ErrorDocument 404 https://theo-ransay.github.io/io/404.html
+#ErrorDocument 404 https://theo-ransay.github.io/io/404.html
 ErrorDocument 403 https://theo-ransay.github.io/io/404.html
 # END ERROR DOCUMENT
 
@@ -14,7 +14,7 @@ Options All -Indexes
 RewriteEngine On
 
 RewriteRule ^accueil$ index.html
-#RewriteRule ^.{0}$ index.html
+RewriteRule ^.{0}$ index.html
 RewriteRule ^404$ 404.html
 RewriteRule ^mentions-legales$ mentions-legales.html
 
