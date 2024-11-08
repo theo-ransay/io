@@ -940,6 +940,7 @@ section.about-me-section.darkness-section .lightness-card {
     section.about-me-section.darkness-section .lightness-card {
         position: relative;
         padding-top: 16px;
+        height: fit-content;
     }
     .about-me-container div img {
         position: initial;
