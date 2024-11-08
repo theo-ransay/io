@@ -7,8 +7,8 @@
 function choiceContactForm() {
 
     /* choice form button */
-    const contactFromButton = document.getElementById('contact-button');
-    const pricingFromButton = document.getElementById('pricing-button');
+    const contactFormButton = document.getElementById('contact-button');
+    const pricingFormButton = document.getElementById('pricing-button');
 
     /* forms */
     const contactFrom = document.getElementById('contactForm');
@@ -16,7 +16,7 @@ function choiceContactForm() {
 
     if (contactFrom || pricingFrom) {
 
-        contactFromButton.addEventListener('click', function (event) {
+        contactFormButton.addEventListener('click', function (event) {
 
             event.preventDefault();
 
@@ -25,12 +25,12 @@ function choiceContactForm() {
             contactFrom.classList.add('open');
 
             /* handle display choice form button */
-            pricingFromButton.classList.remove('open');
-            contactFromButton.classList.add('open');
+            pricingFormButton.classList.remove('open');
+            contactFormButton.classList.add('open');
 
         });
 
-        pricingFromButton.addEventListener('click', function (event) {
+        pricingFormButton.addEventListener('click', function (event) {
 
             event.preventDefault();
 
@@ -39,8 +39,8 @@ function choiceContactForm() {
             contactFrom.classList.remove('open');
 
             /* handle display choice form button */
-            pricingFromButton.classList.add('open');
-            contactFromButton.classList.remove('open');
+            pricingFormButton.classList.add('open');
+            contactFormButton.classList.remove('open');
 
         });
 

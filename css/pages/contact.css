@@ -47,6 +47,7 @@
     }
     .why-contact-form, .form-container {
         padding-bottom: 0px!important;
+        padding-right: 2px!important;
     }
 }
 
