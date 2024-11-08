@@ -14,7 +14,7 @@ Options All -Indexes
 RewriteEngine On
 
 RewriteRule ^accueil$ index.html
-RewriteRule ^.{0}$ index.html
+#RewriteRule ^.{0}$ index.html
 RewriteRule ^404$ 404.html
 RewriteRule ^mentions-legales$ mentions-legales.html
 

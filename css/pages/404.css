@@ -1,0 +1,9 @@
+/*
+* Page : 404 page
+* type : css
+* Apply on 1 page
+*/
+[data-barba-namespace="404-not-found"] .hero h1 {
+    font-size: 138px;
+    line-height: 80px;
+}
