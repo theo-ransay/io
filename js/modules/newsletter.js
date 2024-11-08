@@ -1,21 +1,21 @@
+import { validateEmail } from '../app.js';
+import { validateText } from '../app.js';
+import { validateNumber } from '../app.js';
+
 /* ---------------------------------------------------------------------------------------------------------------------- */
 
 /*  START NEWSLETTER FORM */
 
 /* ---------------------------------------------------------------------------------------------------------------------- */
 
-// validate email
-function validateEmail(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-}
-
 // neewsletter form
 const newsletterForm = document.getElementById('newsletter-form');
 
-function sendNewsletterForm(event) {
+export function sendNewsletterForm(event) {
 
     event.preventDefault();
+
+    const newsletterForm = event.target;
 
     // connection at emailjs
     (function() {
@@ -49,6 +49,10 @@ function sendNewsletterForm(event) {
         });
 
         newsletterForm.reset();
+
+    setTimeout(function() {
+        messageSection.innerHTML = '';
+    }, 5000);
 
 }
 if (newsletterForm) {

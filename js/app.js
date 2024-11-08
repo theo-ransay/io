@@ -1,3 +1,21 @@
+export function validateEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
+export function validateText(input) {
+    const regex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
+    return regex.test(input);
+}
+export function validateNumber(input) {
+    const regex = /^\d+([.,]\d+)?$/;
+    return regex.test(input);
+}
+
+import { choiceContactForm } from './modules/contact-form.js';
+import { sendPricingForm } from './modules/contact-form.js';
+import { sendContactForm } from './modules/contact-form.js';
+import { sendNewsletterForm } from './modules/newsletter.js';
+
 /* ---------------------------------------------------------------------------------------------------------------------- */
 
 /*  START CONFIG BARBA.JS */
@@ -175,6 +193,30 @@ barba.init({
                     rootMargin: '0px',
                     threshold: threshold
                 });
+
+                const contactForm = document.getElementById('contactForm');
+                const pricingForm = document.getElementById('pricingForm');
+                const newsletterForm = document.getElementById('newsletter-form');
+
+                choiceContactForm();
+
+                if (contactForm) {
+
+                    contactForm.addEventListener('submit', sendContactForm);
+
+                }
+
+                if (pricingForm) {
+
+                    pricingForm.addEventListener('submit', sendPricingForm);
+
+                }
+
+                if (newsletterForm) {
+
+                    newsletterForm.addEventListener('submit', sendNewsletterForm);
+
+                }
 
             }
         }

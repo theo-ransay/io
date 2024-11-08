@@ -93,15 +93,28 @@ body.dark form input[type="submit"] {
 /* ------------------------------------------------------------------------------------------------------------------------- */
 
 /* response */
+#response-message {
+    width: 100%;
+}
 #response-message p {
     color: var(--lightness-color);
     font-size: 14px;
 }
 #response-message .success-message {
     color: green;
+    background: transparent;
+    padding: 4px 16px;
+    border-radius: 56px;
+    width: calc(100% - 32px);
+    border: 1px solid green;
 }
 #response-message .error-message {
     color: red;
+    background: transparent;
+    padding: 4px 16px;
+    border-radius: 56px;
+    width: calc(100% - 32px);
+    border: 1px solid red;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------------- */

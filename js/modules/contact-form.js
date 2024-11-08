@@ -1,10 +1,14 @@
+import { validateEmail } from '../app.js';
+import { validateText } from '../app.js';
+import { validateNumber } from '../app.js';
+
 /* ---------------------------------------------------------------------------------------------------------------------- */
 
 /*  START CONTACT FORM */
 
 /* ---------------------------------------------------------------------------------------------------------------------- */
 
-function choiceContactForm() {
+export function choiceContactForm() {
 
     /* choice form button */
     const contactFormButton = document.getElementById('contact-button');
@@ -49,30 +53,14 @@ function choiceContactForm() {
 }
 document.addEventListener('DOMContentLoaded', choiceContactForm);
 
-// email validation
-function validateEmail(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-}
-
-// text validation
-function validateText(input) {
-    const regex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
-    return regex.test(input);
-}
-
-// number validation
-function validateNumber(input) {
-    const regex = /^\d+([.,]\d+)?$/;
-    return regex.test(input);
-}
-
 // contact form
 const contactForm = document.getElementById('contactForm');
 
-function sendContactForm(event) {
+export function sendContactForm(event) {
 
     event.preventDefault();
+
+    const contactForm = event.target;
 
     // connection at emailjs
     (function() {
@@ -121,6 +109,10 @@ function sendContactForm(event) {
 
         contactForm.reset();
 
+    setTimeout(function() {
+        messageSection.innerHTML = '';
+    }, 5000);
+
 }
 if (contactForm) {
 
@@ -144,9 +136,11 @@ if (contactForm) {
 // pricing form
 const pricingForm = document.getElementById('pricingForm');
 
-function sendPricingForm(event) {
+export function sendPricingForm(event) {
 
     event.preventDefault();
+
+    const pricingForm = event.target;
 
     // connection at emailjs
     (function() {
@@ -208,6 +202,10 @@ function sendPricingForm(event) {
         });
 
         pricingForm.reset();
+
+    setTimeout(function() {
+        messageSection.innerHTML = '';
+    }, 5000);
 
 }
 if (pricingForm) {
