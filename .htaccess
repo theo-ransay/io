@@ -13,15 +13,13 @@ Options All -Indexes
 # BEGIN REWRITE URL
 RewriteEngine On
 
-RewriteCond %{REQUEST_URI} ^/io/accueil$ [NC]
-RewriteRule ^(.*)$ https://theo-ransay.github.io/io/index [R=301,L]
-#RewriteRule ^accueil$ index.html [L]
-#RewriteRule ^.{0}$ index.html [L]
-#RewriteRule ^404$ 404.html [L]
-#RewriteRule ^mentions-legales$ mentions-legales.html [L]
+RewriteRule ^accueil$ accueil.html [L]
+RewriteRule ^.{0}$ index.html [L]
+RewriteRule ^404$ 404.html [L]
+RewriteRule ^mentions-legales$ mentions-legales.html [L]
 
-#RewriteRule ^wipuulce$ wipuulce.html [L]
-#RewriteRule ^contact$ contact.html [L]
+RewriteRule ^wipuulce$ wipuulce.html [L]
+RewriteRule ^contact$ contact.html [L]
 # END REWRITE URL
 
 # BEGIN PREVENT HOTLINKING
