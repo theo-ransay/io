@@ -162,7 +162,19 @@ barba.init({
 
                 loadCSSBasedOnPage(urlToCssMap);
                 initNavMobileCallback();
-                observeElements('#main-section > section.animate-element, #main-section > footer.animate-element', '#main-section');
+
+                // Determine if the device is mobile
+                const isMobile = window.matchMedia("only screen and (max-width: 768px)").matches;
+
+                // Set threshold based on device type
+                const threshold = isMobile ? 0.2 : 0.5; // Modify the threshold value for mobile
+
+                // Pass the modified options to the observeElements function
+                observeElements('#main-section > section.animate-element, #main-section > footer.animate-element', '#main-section', {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: threshold
+                });
 
             }
         }
