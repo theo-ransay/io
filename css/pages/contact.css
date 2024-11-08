@@ -39,6 +39,17 @@
     overflow: hidden;
 }
 
+/* responsiv */
+@media (max-width: 768px) {
+    #hero-section.hero.contact .hero-container {
+        padding: 56px 32px 0px 0px;
+        margin-bottom: 96px;
+    }
+    .why-contact-form, .form-container {
+        padding: 32px;
+    }
+}
+
 /* animation */
 #hero-section.hero.contact.visible .hero-container {
     will-change: transform;
@@ -344,6 +355,7 @@ section.hero.contact .liste-social-icon .link-social-icon .social-icon {
 @media (max-width: 768px) {
     #hero-section.hero.contact {
         overflow: hidden;
+        padding-top: 32px;
     }
     #hero-section.hero.contact .hero-content > div {
         width: calc(100% - 32px);
