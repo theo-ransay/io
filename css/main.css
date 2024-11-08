@@ -315,12 +315,12 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, li, i, a, u, b, a, strong {
     pointer-events: auto;
 }
 
-/* responsiv */
+/* responsiv
 @media (max-width: 768px) {
     #cursor-custom, .cursor-custom-tear-effect {
         opacity: 0;
     }
-}
+}*/
 
 /* ---------------------------------------------------------------------------------------------------------------------- */
 

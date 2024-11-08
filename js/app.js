@@ -186,43 +186,45 @@ barba.init({
 const coords = { x: -16, y: -16 };
 const cursorTearsEffect = document.querySelectorAll('.cursor-custom-tear-effect');
 
-cursorTearsEffect.forEach(function (tear) {
-    tear.x = 0;
-    tear.y = 0;
-});
+// Do nothing on mobile
+if (window.matchMedia("(pointer: coarse)").matches || window.innerWidth <= 768) {
+    // Do nothing
+} else {
 
-window.addEventListener('mousemove', function(e) {
-    coords.x = e.clientX;
-    coords.y = e.clientY;
-});
-
-function animationTear() {
-
-    let x = coords.x;
-    let y = coords.y;
-
-    cursorTearsEffect.forEach(function (tear, index) {
-
-        tear.style.left = x - 8 + "px";
-        tear.style.top = y - 8 + "px";
-
-        tear.style.transform = `scale(${(cursorTearsEffect.length - index) / cursorTearsEffect.length})`;
-
-        tear.x = x;
-        tear.y = y;
-
-        const nextTear = cursorTearsEffect[index + 1] || cursorTearsEffect[0];
-
-        x += (nextTear.x - x) * 0.15;
-        y += (nextTear.y - y) * 0.15;
-
+    cursorTearsEffect.forEach(function (tear) {
+        tear.x = 0;
+        tear.y = 0;
     });
 
-    requestAnimationFrame(animationTear);
+    window.addEventListener('mousemove', function(e) {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+    });
+
+    function animationTear() {
+        let x = coords.x;
+        let y = coords.y;
+
+        cursorTearsEffect.forEach(function (tear, index) {
+            tear.style.left = x - 8 + "px";
+            tear.style.top = y - 8 + "px";
+
+            tear.style.transform = `scale(${(cursorTearsEffect.length - index) / cursorTearsEffect.length})`;
+
+            tear.x = x;
+            tear.y = y;
+
+            const nextTear = cursorTearsEffect[index + 1] || cursorTearsEffect[0];
+
+            x += (nextTear.x - x) * 0.15;
+            y += (nextTear.y - y) * 0.15;
+        });
+
+        requestAnimationFrame(animationTear);
+    }
+    document.addEventListener('DOMContentLoaded', animationTear);
 
 }
-document.addEventListener('DOMContentLoaded', animationTear);
-
 /* ---------------------------------------------------------------------------------------------------------------------- */
 
 /*  START LOADER */
