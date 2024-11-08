@@ -1010,6 +1010,9 @@ body.light nav#header-nav-mobile-menu a.active {
 body.dark nav#header-nav-mobile-menu a.active {
     color: var(--primary-darkmode-color);
 }
+body.dark nav#header-nav-mobile-menu li:hover a {
+    color: var(--primary-darkmode-color);
+}
 
 /* open mobile menu */
 nav#header-nav-mobile-menu.open {
