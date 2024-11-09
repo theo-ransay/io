@@ -752,10 +752,10 @@ header .header-logo-container .text-link-visibility-none {
 }
 /* darkmode */
 body.light header .header-logo-container .logo {
-    background-image: url('../assets/images/logo-theo-ransay-light.png');
+    background-image: url('../assets/images/logo-theo-ransay-light.png'), url('../assets/images/logo-theo-ransay-light.webp');
 }
 body.dark header .header-logo-container .logo {
-    background-image: url('../assets/images/logo-theo-ransay-dark.png');
+    background-image: url('../assets/images/logo-theo-ransay-dark.png'), url('../assets/images/logo-theo-ransay-dark.webp');
 }
 header .header-nav-menu ul {
     padding: 14px 32px;
@@ -1204,10 +1204,10 @@ footer .footer-logo .logo {
     background-size: contain;
 }
 body.light footer .footer-logo .logo {
-    background-image: url('../assets/images/logo-theo-ransay-light.png');
+    background-image: url('../assets/images/logo-theo-ransay-light.png'), url('../assets/images/logo-theo-ransay-light.webp');
 }
 body.dark footer .footer-logo .logo {
-    background-image: url('../assets/images/logo-theo-ransay-dark.png');
+    background-image: url('../assets/images/logo-theo-ransay-dark.png'), url('../assets/images/logo-theo-ransay-dark.webp');
 }
 
 /* responsiv */
