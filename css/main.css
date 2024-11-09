@@ -1345,7 +1345,7 @@ footer.visible .footer-copyright a {
         max-width: fit-content;
     }
     footer .footer-logo a {
-        width: fit-content;
+        width: 100%;
     }
     footer .footer-logo img {
         max-width: 100%;
