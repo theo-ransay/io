@@ -899,11 +899,13 @@ section.about-me-section.darkness-section .lightness-card {
     border-radius: 16px;
 }
 
-.about-me-container div img {
+.about-me-container div picture {
     position: absolute;
-    bottom: 0;
+    bottom: -3px;
     max-height: calc(100% + 56px);
-    width: calc(100% - 10vw);
+}
+.about-me-container div picture img {
+    width: calc(100% + 56px);
 }
 
 /* breakpoint */
@@ -942,7 +944,7 @@ section.about-me-section.darkness-section .lightness-card {
         padding-top: 16px;
         height: fit-content;
     }
-    .about-me-container div img {
+    .about-me-container div picture {
         position: initial;
     }
 }
