@@ -1641,7 +1641,7 @@ body.light #cookie-banner-container p {
     color: var(--lightness-color);
 }
 body.light #cookie-banner-container, body.light .citation-container {
-    background: rgba(8, 0, 26, 0.7);
+    background: rgba(8, 0, 26, 1);
     border: 1px solid rgba(246, 236, 246, 0.5);
 }
 body.dark #cookie-banner-container, body.dark .citation-container {
