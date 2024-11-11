@@ -18,16 +18,16 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="js/libraries/splideJs/dist/css/splide.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/components/hero.css">
-    <link rel="stylesheet" href="css/components/faq.css">
-    <link rel="stylesheet" href="css/components/portfolio.css">
-    <link rel="stylesheet" href="css/components/reviews.css">
-    <link rel="stylesheet" href="css/components/carousel.css">
-    <link rel="stylesheet" href="css/components/forms.css">
-    <link rel="stylesheet" href="css/pages/home.css">
-    <link rel="stylesheet" href="css/pages/404.css">
+    <link rel="stylesheet" href="css/reset.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/main.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/components/hero.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/components/faq.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/components/portfolio.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/components/reviews.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/components/carousel.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/components/forms.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/pages/home.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/pages/404.css" media="print" onload="this.media='all'">
 
     <!-- Open Graph for socials networks -->
     <meta property="og:title" content="Création de Sites Web sur Mesure - Freelance à Montpellier">
@@ -39,10 +39,36 @@
     <meta property="og:locale" content="fr_FR">
 
     <!-- Script EmailJS for contact form -->
-    <script async src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- End script EmailJS for contact form -->
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJTFG33G88"></script>
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-PJTFG33G88"></script>
+    <!-- End google tag (gtag.js) -->
+
+    <!-- Splide -->
+    <script defer src="js/libraries/splideJs/dist/js/splide.min.js"></script>
+    <!-- End splide -->
+
+    <!-- Gsap -->
+    <script defer src="js/libraries/gsap/dist/gsap.min.js"></script>
+    <!-- End gsap -->
+
+    <!-- Barba -->
+    <script defer src="js/libraries/@barba/core/dist/barba.umd.js"></script>
+    <!-- End Barba -->
+
+    <!-- Contact Form -->
+    <script type="module" src="js/modules/contact-form.js"></script>
+    <!-- End Contact Form -->
+
+    <!-- Newsletter -->
+    <script type="module" src="js/modules/newsletter.js"></script>
+    <!-- End Newsletter -->
+
+    <!-- JS -->
+    <script type="module" src="js/app.js"></script>
+    <!-- End JS -->
 </head>
 <body class="light" data-barba="wrapper">
 
@@ -181,17 +207,17 @@
             <form id="custom-cookies-consent">
                 <div class="content-choice-cookie">
                     <div class="content-cookie-description">
-                        <label for="">Fonctionnel</label>
+                        <label for="fonctional-cookies">Fonctionnel</label>
                         <p>Les cookies fonctionnels permettent d’activer des options comme le partage sur les réseaux sociaux, la collecte de feedback, et d'autres services tiers.</p>
                     </div>
-                    <input type="checkbox" value="cookie-base">
+                    <input id="fonctional-cookies" name="fonctional-cookies" type="checkbox" value="cookie-base">
                 </div>
                 <div class="content-choice-cookie">
                     <div class="content-cookie-description">
-                        <label for="">Analytique</label>
+                        <label for="analitycs-cookies">Analytique</label>
                         <p>Les cookies analytiques m’aident à comprendre comment vous interagissez avec le site, comme le nombre de visites, le taux de rebond, et les sources de trafic.</p>
                     </div>
-                    <input type="checkbox" value="cookie-analitycs">
+                    <input id="analitycs-cookies" name="analitycs-cookies" type="checkbox" value="cookie-analitycs">
                 </div>
                 <input type="submit" id="send-custom-cookies" value="Envoyer mes préférences">
             </form>
@@ -1224,30 +1250,5 @@
             </footer>
         </div>
     </main>
-
-    <!-- Splide -->
-    <script src="js/libraries/splideJs/dist/js/splide.min.js"></script>
-    <!-- End splide -->
-
-    <!-- Gsap -->
-    <script src="js/libraries/gsap/dist/gsap.min.js"></script>
-    <!-- End gsap -->
-
-    <!-- Barba -->
-    <script src="js/libraries/@barba/core/dist/barba.umd.js"></script>
-    <!-- End Barba -->
-
-    <!-- Contact Form -->
-    <script type="module" src="js/modules/contact-form.js"></script>
-    <!-- End Contact Form -->
-
-    <!-- Newsletter -->
-    <script type="module" src="js/modules/newsletter.js"></script>
-    <!-- End Newsletter -->
-
-    <!-- JS -->
-    <script type="module" src="js/app.js"></script>
-    <!-- End JS -->
-
 </body>
 </html>
