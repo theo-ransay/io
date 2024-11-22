@@ -1,0 +1,93 @@
+/* ---------------------------------------------------------------------------------------------------------------------- */
+
+/*  START ANIMATIONS */
+
+/* ---------------------------------------------------------------------------------------------------------------------- */
+
+/* bounced apear */
+@keyframes bouncedApear {
+    from {
+        transform: scale(1.2);
+        opacity: 0;
+    } to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* bounced Up apear (socials icons) */
+@keyframes bounceUp {
+    0% {
+        opacity: 0;
+        transform: translateY(8px);
+    } 50% {
+        opacity: 1;
+        transform: translateY(-4px);
+    } 100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+/* bounced Down apear (footer credit) */
+@keyframes bounceDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-8px);
+    } 50% {
+        opacity: 1;
+        transform: translateY(4px);
+    } 100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* apear */
+@keyframes apear {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+/* button */
+@keyframes buttonApear {
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+    } to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* title apear */
+@keyframes apearTitle {
+    from {
+        background-size: 0% 100%;
+    } to {
+        background-size: 100% 100%;
+    }
+}
+
+/* text reveal */
+@keyframes textSlideUp {
+    from {
+        transform: translateY(8px);
+    } to {
+        transform: translateY(0);
+    }
+}
+@keyframes textRotate {
+    from {
+        transform: rotate(2deg);
+    } to {
+        transform: rotate(0deg);
+    }
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------- */
+
+/*  END ANIMATIONS */
+
+/* ---------------------------------------------------------------------------------------------------------------------- */
